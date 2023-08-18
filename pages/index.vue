@@ -11,6 +11,7 @@
 
 <script setup>
 definePageMeta({
-  layout: 'app-layout'
+  layout: 'app-layout',
+  middleware: ['auth']
 })
 </script>
