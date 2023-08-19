@@ -68,7 +68,7 @@ export type User = {
       await $larafetch("/logout", { method: "post" });
       user.value = null;
   
-      await router.push("/login");
+      await router.push("/auth/login");
     }
   
     async function forgotPassword(email: string) {
@@ -100,7 +100,7 @@ export type User = {
   
   export const fetchCurrentUser = async () => {
     try {
-      return await $larafetch<User>("/api/v1/user", {
+      await $larafetch<User>("/api/user", {
         redirectIfNotAuthenticated: false,
       });
     } catch (error: any) {

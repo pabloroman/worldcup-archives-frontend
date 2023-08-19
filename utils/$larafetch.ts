@@ -41,6 +41,7 @@ export async function $larafetch<T, R extends ResponseType = "json">(
     // cannot use nuxt composables such as useCookie after an async operation:
     // https://github.com/nuxt/framework/issues/5238
     token = getCookie(CSRF_COOKIE);
+    console.log(token);
   }
 
   let headers: any = {
@@ -73,7 +74,7 @@ export async function $larafetch<T, R extends ResponseType = "json">(
     const status = error.response?.status ?? -1;
 
     if (redirectIfNotAuthenticated && [401, 419].includes(status)) {
-      await router.push("/login");
+      await router.push("/auth/login");
     }
 
     if (redirectIfNotVerified && [409].includes(status)) {
