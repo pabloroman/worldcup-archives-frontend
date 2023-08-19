@@ -100,7 +100,7 @@ export type User = {
   
   export const fetchCurrentUser = async () => {
     try {
-      await $larafetch<User>("/api/user", {
+      return await $larafetch<User>("/api/user", {
         redirectIfNotAuthenticated: false,
       });
     } catch (error: any) {
