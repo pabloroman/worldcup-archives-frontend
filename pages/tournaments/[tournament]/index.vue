@@ -4,7 +4,7 @@
       <div>
         <h1 class="text-4xl font-bold tracking-tight text-gray-900">Single tournamne</h1>
       </div>
-      <Tournament/>
+      <Tournament :slug="route.params.tournament" />
     </div>
     
     </template>
@@ -13,4 +13,7 @@
     definePageMeta({
       layout: 'app-layout',
     })
+
+    const route = useRoute();
+
     </script>
