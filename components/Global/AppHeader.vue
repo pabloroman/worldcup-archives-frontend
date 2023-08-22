@@ -1,5 +1,5 @@
 <template>
-
+    <TournamentList></TournamentList>
 </template>
 
 <script setup>

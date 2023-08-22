@@ -4,8 +4,13 @@
         Loading...
     </div>
     <div v-else>
-        <TournamentCard v-for="tournament in tournaments.data"
-        :tournament="tournament"/>
+        <div id="tournament-list" class="flex h-16 items-center overflow-x-scroll">
+        <div v-for="tournament in tournaments.data">
+            <NuxtLink :to="'/tournaments/'+tournament.id">
+                <span class="whitespace-nowrap p-6">{{ tournament.host_country }} {{ tournament.year }}</span>
+            </NuxtLink>
+        </div>
+    </div>
     </div>
 </template>
 
@@ -16,3 +21,14 @@
         method: 'GET',
     });
 </script>
+<style scoped>
+#tournament-list {
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+  overflow-y: scroll; 
+}
+
+#tournament-list::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
+}
+</style>
