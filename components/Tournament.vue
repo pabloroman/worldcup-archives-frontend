@@ -10,6 +10,12 @@
         </div>
         </header>
 
+        <section>
+            <div class="text-2xl font-medium text-center py-6">
+            {{ tournament.data.games.final[0].home_team }} {{ tournament.data.games.final[0].home_team_score }} - {{ tournament.data.games.final[0].away_team_score }} {{ tournament.data.games.final[0].away_team }}
+            </div>
+        </section>
+
         <div class="min-h-screen bg-center bg-gray-100">
             <div class="max-w-screen-lg mx-auto py-10">
                 <h3 class="text-2xl">Teams</h3>
