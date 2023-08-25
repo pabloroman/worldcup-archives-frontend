@@ -1,8 +1,7 @@
 <template>
 
     <div>
-      <TournamentHeader :slug="route.params.tournament"></TournamentHeader>
-      <Tournament :slug="route.params.tournament" />
+        <TournamentHeader :slug="route.params.tournament"></TournamentHeader>
     </div>
     
     </template>
