@@ -1,0 +1,8 @@
+{
+  "appId": "com.felix.app",
+  "appName": "felix",
+  "webDir": ".output/public",
+  "server": {
+    "androidScheme": "https"
+  }
+}
