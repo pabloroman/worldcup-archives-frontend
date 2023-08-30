@@ -1,9 +1,6 @@
 <template>
 
-    <div v-if="pending">
-        Loading...
-    </div>
-    <div v-else>
+    <div v-if="!pending">
         <div id="tournament-list" class="flex h-16 px-6 items-center overflow-x-scroll space-x-6 sm:space-x-8">
         <div v-for="tournament in tournaments.data">
             <NuxtLink :to="'/tournaments/'+tournament.id">

@@ -1,8 +1,5 @@
 <template>
-    <div v-if="pending">
-        Loading...
-    </div>
-    <div v-else>
+    <div v-if="!pending">
         <header style="background-color: #ff9b54;">
             <div class="max-w-screen-lg mx-auto py-10">
                 <div class="text-white opacity-75">{{ tournament.data.name }}</div>
@@ -10,7 +7,6 @@
             </div>
         </header>
     </div>
-
 </template>
 
 <script setup>

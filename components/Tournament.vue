@@ -1,8 +1,5 @@
 <template>
-    <div v-if="pendingGames || pendingTeams">
-        Loading...
-    </div>
-    <div v-else>
+    <div v-if="!pendingGames && !pendingTeams">
 
         <section>
             <div class="text-2xl font-medium text-center py-6">

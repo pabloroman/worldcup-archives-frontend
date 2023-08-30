@@ -2,16 +2,40 @@
     <div v-if="pending">
     </div>
     <div v-else>
-        <div class="min-h-screen bg-center bg-gray-100">
+        <div class="min-h-screen bg-center bg-white p-6 lg:p-0">
             <div class="max-w-screen-lg mx-auto py-10">
                 <h2 class="text-4xl text-medium">{{ team.data.team.name }}</h2>
                 <p>{{ team.data.performance }}</p>
-                <h3 class="text-2xl">Squad</h3>
-                <ul class="mt-8 grid grid-cols-1 gap-x-12 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
-                    <li class="group relative flex flex-col items-start" v-for="member in team.data.squad_members">
-                        <div>{{ member.shirt_number }} {{ member.position_code }}</div> <span class="text-bold">{{ member.player.given_name }} {{ member.player.family_name }}</span>
-                    </li>
-                </ul>
+
+                <div class="grid lg:grid-cols-3 gap-4">
+
+                    <div class="col-span-2">
+                        <h3 class="text-2xl">Games</h3>
+                        <ul class="mt-8 divide-y divide-gray-100">
+                            <li class="group relative flex items-start space-x-4 py-4" v-for="game in team.data.games">
+                                {{  game.name }}
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-2xl">Manager</h3>
+                        <ul class="mt-8 divide-y divide-gray-100">
+                            <li class="group relative flex items-start space-x-4 py-4" v-for="manager in team.data.managers">
+                                {{  manager.given_name }} {{  manager.family_name }}
+                            </li>
+                        </ul>
+
+                        <h3 class="text-2xl">Squad</h3>
+                        <ul class="mt-8 divide-y divide-gray-100">
+                            <li class="group relative flex items-start space-x-4 py-4" v-for="member in team.data.squad_members">
+                                <span>{{ member.shirt_number }}</span>
+                                <span>{{ member.player.given_name }} <span class="font-bold">{{ member.player.family_name }}</span></span>
+                                <span>{{ member.position_code }}</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
