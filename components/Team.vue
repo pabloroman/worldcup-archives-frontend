@@ -4,7 +4,7 @@
     <div v-else>
         <div class="min-h-screen bg-center bg-white p-6 lg:p-0">
             <div class="max-w-screen-lg mx-auto py-10">
-                <h2 class="text-4xl text-medium">{{ team.data.team.name }}</h2>
+                <h2 class="text-4xl text-medium">{{ team.data.team.flag }} {{ team.data.team.name }}</h2>
                 <p>{{ team.data.performance }}</p>
 
                 <div class="grid lg:grid-cols-3 gap-4">
@@ -13,7 +13,9 @@
                         <h3 class="text-2xl">Games</h3>
                         <ul class="mt-8 divide-y divide-gray-100">
                             <li class="group relative flex items-start space-x-4 py-4" v-for="game in team.data.games">
+                                <NuxtLink :to="'/tournaments/'+route.params.tournament+'/games/'+game.id">
                                 {{  game.name }}
+                                </NuxtLink>
                             </li>
                         </ul>
                     </div>
@@ -42,6 +44,9 @@
 </template>
 
 <script setup>
+
+    const route = useRoute();
+
     const props = defineProps({
         team: {
             type: String,

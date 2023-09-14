@@ -11,13 +11,13 @@
         </section>
 
         <div class="min-h-screen bg-center bg-gray-100">
-            <div class="max-w-screen-lg mx-auto py-10">
+            <div class="max-w-screen-lg mx-auto py-10 px-0 md:px-6 lg:px-0">
                 <h3 class="text-2xl">Teams</h3>
-                <ul class="mt-8 grid grid-cols-1 gap-x-12 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
+                <ul class="mt-8 grid grid-cols-1 gap-x-12 md:gap-y-4 lg:gap-y-8 md:grid-cols-2 lg:grid-cols-4">
                     <li class="group relative flex flex-col items-start" v-for="team in teams.data">
                         <NuxtLink class="w-full" :to="'/tournaments/'+route.params.tournament+'/teams/'+team.code">
-                        <div class="bg-white p-4 w-full h-32 hover:bg-zinc-50 sm:rounded-2xl">
-                            {{ team.name }}
+                        <div class="bg-white p-4 w-full lg:h-32 hover:bg-zinc-50 sm:rounded-2xl">
+                            {{ team.flag }} {{ team.name }}
                         </div>
                         </NuxtLink>
                     </li>
