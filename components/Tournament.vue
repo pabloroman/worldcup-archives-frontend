@@ -1,28 +1,31 @@
 <template>
     <div v-if="!pendingGames && !pendingTeams">
 
-        <section>
-            <div class="text-2xl font-medium text-center py-6">
-                <NuxtLink :to="'/tournaments/'+route.params.tournament+'/games/'+games.data.final[0].id">
-                <span class="whitespace-nowrap">{{ games.data.final[0].home_team }} {{ games.data.final[0].home_team_score }} - {{ games.data.final[0].away_team_score }} {{ games.data.final[0].away_team }}
-</span>
-                </NuxtLink>
-            </div>
-        </section>
+        <div class="min-h-screen bg-center bg-gray-100 px-4 sm:px-6 lg:px-8">
 
-        <div class="min-h-screen bg-center bg-gray-100">
-            <div class="max-w-screen-lg mx-auto py-10 px-0 md:px-6 lg:px-0">
-                <h3 class="text-2xl">Teams</h3>
-                <ul class="mt-8 grid grid-cols-1 gap-x-12 md:gap-y-4 lg:gap-y-8 md:grid-cols-2 lg:grid-cols-4">
-                    <li class="group relative flex flex-col items-start" v-for="team in teams.data">
-                        <NuxtLink class="w-full" :to="'/tournaments/'+route.params.tournament+'/teams/'+team.code">
-                        <div class="bg-white p-4 w-full lg:h-32 hover:bg-zinc-50 sm:rounded-2xl">
-                            {{ team.flag }} {{ team.name }}
-                        </div>
-                        </NuxtLink>
-                    </li>
-                </ul>
+            <div class="grid lg:grid-cols-3 gap-8 pt-8">
+
+                <div class="lg:col-span-2">
+                <table class="min-w-full table-auto text-left divide-y divide-gray-300">
+                    <tbody v-for="game in games.data">
+                    <GamePreview :game="game" :tournament="route.params.tournament"></GamePreview>
+                    </tbody>
+                </table>
+                </div>
+
+                <div class="lg:col-span-1">
+                    <ul class="divide-y divide-gray-200">
+                        <li class="group relative flex flex-col items-start bg-white" v-for="team in teams.data">
+                            <NuxtLink class="w-full" :to="'/tournaments/'+route.params.tournament+'/teams/'+team.code">
+                            <div class="w-full p-4 hover:bg-zinc-50 flex space-x-2">
+                                <img class="h-6" :src="`/countries/${team.code}.svg`"><span>{{ team.name }}</span>
+                            </div>
+                            </NuxtLink>
+                        </li>
+                    </ul>
+                </div>
             </div>
+
         </div>
     </div>
 

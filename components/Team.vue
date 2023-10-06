@@ -4,7 +4,10 @@
     <div v-else>
         <div class="min-h-screen bg-center bg-white p-6 lg:p-0">
             <div class="max-w-screen-lg mx-auto py-10">
-                <h2 class="text-4xl text-medium">{{ team.data.team.flag }} {{ team.data.team.name }}</h2>
+                <div class="flex space-x-2">
+                    <img class="h-8" :src="`/countries/${team.data.team.code}.svg`">
+                    <h2 class="text-4xl text-medium">{{ team.data.team.name }}</h2>
+                </div>
                 <p>{{ team.data.performance }}</p>
 
                 <div class="grid lg:grid-cols-3 gap-4">

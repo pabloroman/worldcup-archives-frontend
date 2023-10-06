@@ -1,6 +1,6 @@
 <template>
     <div class="flex space-x-1 items-center" v-for="(winner, index) in searchAwardsByName(this.awards, this.name)" :key="index">
-      <span>{{ winner.player.given_name }} {{ winner.player.family_name }}</span> <img class="h-3" :src="`countries/${winner.team.code}.svg`">
+      <span>{{ winner.player.given_name }} {{ winner.player.family_name }}</span> <img class="h-3" :src="`/countries/${winner.team.code}.svg`">
     </div>
 </template>
 

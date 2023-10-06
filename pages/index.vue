@@ -6,21 +6,20 @@
   </div>
 
   <div v-if="!pending" class="mt-6">
-    <table class="table-auto border-separate border-spacing-6 border-spacing-x-4 text-left">
+    <table class="min-w-full table-auto text-left divide-y divide-gray-300">
       <thead>
         <tr>
-          <th>Host country</th>
-          <th>Winner</th>
-          <th>Qualified teams</th>
-          <th>Golden Ball (best player)</th>
-          <th>Golden Boot (top scorer)</th>
-          <th>Golden Glove (best keeper)</th>
-          <th>Best Young Player</th>
+          <th class="px-3 py-4">Host country</th>
+          <th class="px-3 py-4">Winner</th>
+          <th class="px-3 py-4">Teams</th>
+          <th class="px-3 py-4 hidden md:table-cell">Golden Ball (best player)</th>
+          <th class="px-3 py-4 hidden md:table-cell">Golden Boot (top scorer)</th>
+          <th class="px-3 py-4 hidden md:table-cell">Golden Glove (best keeper)</th>
         </tr>
       </thead>
-      <tbody>
-      <tr v-for="tournament in tournaments.data" class="py-2">
-        <td class="align-top">
+      <tbody class="divide-y divide-gray-200 bg-white">
+      <tr v-for="tournament in tournaments.data" class="py-2 even:bg-gray-50">
+        <td class="align-top px-3 py-4">
         <NuxtLink :to="'/tournaments/'+tournament.id">
           <div class="flex">{{ tournament.host_country }} {{ tournament.year }}&nbsp;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-3 h-3 opacity-40">
   <path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd" />
@@ -28,28 +27,25 @@
 </svg></div>
         </NuxtLink>
         </td>
-        <td class="align-top whitespace-nowrap">
+        <td class="align-top whitespace-nowrap px-3 py-4">
           <NuxtLink :to="'/tournaments/'+tournament.id+'/teams/'+tournament.winner.code">
             <div class="font-bold flex space-x-2">
-            <img class="h-6" :src="`countries/${tournament.winner.code}.svg`">
+            <img class="h-6" :src="`/countries/${tournament.winner.code}.svg`">
             <span>{{ tournament.winner.name }}</span>
           </div>
           </NuxtLink>
         </td>
-        <td class="align-top">
+        <td class="align-top px-3 py-4">
           {{ tournament.count_teams }}
         </td>
-        <td class="align-top">
+        <td class="align-top px-3 py-4 hidden md:table-cell">
           <TournamentAward :awards="tournament.awards" name="golden ball"></TournamentAward>
         </td>
-        <td class="align-top">
+        <td class="align-top px-3 py-4 hidden md:table-cell">
           <TournamentAward :awards="tournament.awards" name="golden boot"></TournamentAward>
         </td>
-        <td class="align-top">
+        <td class="align-top px-3 py-4 hidden md:table-cell">
           <TournamentAward :awards="tournament.awards" name="golden glove"></TournamentAward>
-        </td>
-        <td class="align-top">
-          <TournamentAward :awards="tournament.awards" name="best young player"></TournamentAward>
         </td>
       </tr>
     </tbody>

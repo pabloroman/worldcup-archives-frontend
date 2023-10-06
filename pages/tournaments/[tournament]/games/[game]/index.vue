@@ -2,7 +2,7 @@
 
     <div>
         <TournamentHeader :slug="route.params.tournament"></TournamentHeader>
-        <Game :game="route.params.game" :tournament="route.params.tournament"></Game>
+        <GameDetail :game="route.params.game" :tournament="route.params.tournament"></GameDetail>
     </div>
     
     </template>
