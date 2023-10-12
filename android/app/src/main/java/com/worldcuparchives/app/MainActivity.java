@@ -1,4 +1,4 @@
-package com.felix.app;
+package com.worldcuparchives.app;
 
 import com.getcapacitor.BridgeActivity;
 

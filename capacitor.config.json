@@ -1,6 +1,6 @@
 {
-  "appId": "com.felix.app",
-  "appName": "felix",
+  "appId": "com.worldcuparchives.app",
+  "appName": "World Cup Archives",
   "webDir": ".output/public",
   "server": {
     "androidScheme": "https"
