@@ -5,17 +5,17 @@
         <div class="min-h-screen bg-center bg-white p-6 lg:p-0">
             <div class="max-w-screen-lg mx-auto py-10">
                 <div class="flex space-x-2">
-                    <img class="h-8" :src="`/countries/${team.data.team.code}.svg`">
-                    <h2 class="text-4xl text-medium">{{ team.data.team.name }}</h2>
+                    <img class="h-8" :src="`/countries/${team.team.code}.svg`">
+                    <h2 class="text-4xl text-medium">{{ team.team.name }}</h2>
                 </div>
-                <p>{{ team.data.performance }}</p>
+                <p>{{ team.performance }}</p>
 
                 <div class="grid lg:grid-cols-3 gap-4">
 
                     <div class="col-span-2">
                         <h3 class="text-2xl">Games</h3>
                         <ul class="mt-8 divide-y divide-gray-100">
-                            <li class="group relative flex items-start space-x-4 py-4" v-for="game in team.data.games">
+                            <li class="group relative flex items-start space-x-4 py-4" v-for="game in team.games">
                                 <NuxtLink :to="'/tournaments/'+route.params.tournament+'/games/'+game.id">
                                 {{  game.name }}
                                 </NuxtLink>
@@ -26,14 +26,14 @@
                     <div>
                         <h3 class="text-2xl">Manager</h3>
                         <ul class="mt-8 divide-y divide-gray-100">
-                            <li class="group relative flex items-start space-x-4 py-4" v-for="manager in team.data.managers">
+                            <li class="group relative flex items-start space-x-4 py-4" v-for="manager in team.managers">
                                 {{  manager.given_name }} {{  manager.family_name }}
                             </li>
                         </ul>
 
                         <h3 class="text-2xl">Squad</h3>
                         <ul class="mt-8 divide-y divide-gray-100">
-                            <li class="group relative flex items-start space-x-4 py-4" v-for="member in team.data.squad_members">
+                            <li class="group relative flex items-start space-x-4 py-4" v-for="member in team.squad_members">
                                 <span>{{ member.shirt_number }}</span>
                                 <span>{{ member.player.given_name }} <span class="font-bold">{{ member.player.family_name }}</span></span>
                                 <span>{{ member.position_code }}</span>

@@ -2,7 +2,7 @@
 
     <div v-if="!pending">
         <div id="tournament-list" class="flex h-16 px-6 items-center overflow-x-scroll space-x-6 sm:space-x-8">
-        <div v-for="tournament in tournaments.data">
+        <div v-for="tournament in tournaments">
             <NuxtLink :to="'/tournaments/'+tournament.id">
                 <span class="whitespace-nowrap">{{ tournament.host_country }} {{ tournament.year }}</span>
             </NuxtLink>

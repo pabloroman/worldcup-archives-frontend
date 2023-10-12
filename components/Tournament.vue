@@ -7,7 +7,7 @@
 
                 <div class="lg:col-span-2">
                 <table class="min-w-full table-auto text-left divide-y divide-gray-300">
-                    <tbody v-for="game in games.data">
+                    <tbody v-for="game in games">
                     <GamePreview :game="game" :tournament="route.params.tournament"></GamePreview>
                     </tbody>
                 </table>
@@ -15,7 +15,7 @@
 
                 <div class="lg:col-span-1">
                     <ul class="divide-y divide-gray-200">
-                        <li class="group relative flex flex-col items-start bg-white" v-for="team in teams.data">
+                        <li class="group relative flex flex-col items-start bg-white" v-for="team in teams">
                             <NuxtLink class="w-full" :to="'/tournaments/'+route.params.tournament+'/teams/'+team.code">
                             <div class="w-full p-4 hover:bg-zinc-50 flex space-x-2">
                                 <img class="h-6" :src="`/countries/${team.code}.svg`"><span>{{ team.name }}</span>

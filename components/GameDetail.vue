@@ -4,9 +4,9 @@
     <div v-else>
         <div class="min-h-screen bg-center bg-white p-6 lg:p-0">
             <div class="max-w-screen-lg mx-auto py-10">
-                <h2 class="text-4xl text-medium">{{ game.data.name }}</h2>
-                <p>{{ game.data.stage_name }}</p>
-                <p>{{ game.data.match_date }}</p> <p>{{ game.data.stadium.name }} &bull; {{ game.data.stadium.city }}, {{ game.data.stadium.country }}</p>
+                <h2 class="text-4xl text-medium">{{ game.name }}</h2>
+                <p>{{ game.stage_name }}</p>
+                <p>{{ game.match_date }}</p> <p>{{ game.stadium.name }} &bull; {{ game.stadium.city }}, {{ game.stadium.country }}</p>
             </div>
         </div>
     </div>

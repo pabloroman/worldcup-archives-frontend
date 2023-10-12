@@ -18,7 +18,7 @@
         </tr>
       </thead>
       <tbody class="divide-y divide-gray-200 bg-white">
-      <tr v-for="tournament in tournaments.data" class="py-2 even:bg-gray-50">
+      <tr v-for="tournament in tournaments" class="py-2 even:bg-gray-50">
         <td class="align-top px-3 py-4">
         <NuxtLink :to="'/tournaments/'+tournament.id">
           <div class="flex">{{ tournament.host_country }} {{ tournament.year }}&nbsp;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-3 h-3 opacity-40">
