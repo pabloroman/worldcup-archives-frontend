@@ -2,7 +2,7 @@
 
 <div class="px-4 text-center sm:px-6 lg:px-8">
   <div class="py-12 border-b-4 border-neutral-100">
-    <h1 class="text-4xl font-bold tracking-tight text-gray-900">The history of FIFA World Cup</h1>
+    <h1 class="text-4xl font-bold tracking-tight text-gray-900">FIFA World Cup archives</h1>
   </div>
 
   <div v-if="!pending" class="mt-6">
