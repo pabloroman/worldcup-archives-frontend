@@ -1,11 +1,11 @@
 <template>
 
-    <div>
-        <TournamentHeader :slug="route.params.tournament"></TournamentHeader>
-        <GameDetail :game="route.params.game" :tournament="route.params.tournament"></GameDetail>
+    <div v-if="!pending">
+        <GameHeader :game="game" :tournament="route.params.tournament"></GameHeader>
+        <GameDetail :game="game" :tournament="route.params.tournament"></GameDetail>
     </div>
     
-    </template>
+</template>
     
     <script setup>
     definePageMeta({
@@ -13,5 +13,10 @@
     })
 
     const route = useRoute();
+  
+    const { API_BASE_URL } = useRuntimeConfig().public;
+    const { data: game, pending } = await useLazyFetch(
+        API_BASE_URL + `/api/game/${route.params.game}`
+    );
 
     </script>

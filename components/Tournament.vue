@@ -18,7 +18,7 @@
                         <li class="group relative flex flex-col items-start bg-white" v-for="team in teams">
                             <NuxtLink class="w-full" :to="'/tournaments/'+route.params.tournament+'/teams/'+team.code">
                             <div class="w-full p-4 hover:bg-zinc-50 flex space-x-2">
-                                <img class="h-6" :src="`/countries/${team.code}.svg`"><span>{{ team.name }}</span>
+                                <img class="h-6 rounded" :src="`/countries/${team.code}.svg`"><span>{{ team.name }}</span>
                             </div>
                             </NuxtLink>
                         </li>

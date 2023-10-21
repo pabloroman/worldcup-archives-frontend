@@ -30,7 +30,7 @@
         <td class="align-top whitespace-nowrap px-3 py-4">
           <NuxtLink :to="'/tournaments/'+tournament.id+'/teams/'+tournament.winner.code">
             <div class="font-bold flex space-x-2">
-            <img class="h-6" :src="`/countries/${tournament.winner.code}.svg`">
+            <img class="h-6 rounded" :src="`/countries/${tournament.winner.code}.svg`">
             <span>{{ tournament.winner.name }}</span>
           </div>
           </NuxtLink>

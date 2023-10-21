@@ -5,7 +5,7 @@
         <div class="min-h-screen bg-center bg-white p-6 lg:p-0">
             <div class="max-w-screen-lg mx-auto py-10">
                 <div class="flex space-x-2">
-                    <img class="h-8" :src="`/countries/${team.team.code}.svg`">
+                    <img class="h-8 rounded" :src="`/countries/${team.team.code}.svg`">
                     <h2 class="text-4xl text-medium">{{ team.team.name }}</h2>
                 </div>
                 <p>{{ team.performance }}</p>
