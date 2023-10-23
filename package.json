@@ -1,12 +1,15 @@
 {
   "name": "nuxt-app",
   "private": true,
+  "type": "module",
   "scripts": {
-    "build": "nuxt build",
+    "build": "NITRO_PRESET=cloudflare-pages nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "pages:dev": "wrangler pages dev --compatibility-date=2023-10-16 --proxy 3000 -- npm run dev",
+    "pages:deploy": "npm run generate && wrangler pages deploy ./.output/public"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
