@@ -2,7 +2,7 @@
     <header style="background-color: #260eae;" class="text-white">
         <div class="max-w-screen-lg mx-auto p-4 lg:px-0 lg:py-8">
 
-            <div class="text-center text-[10px] lg:text-sm uppercase">{{ tournament }} > {{ game.stage_name }}</div>
+            <div class="text-center text-[10px] lg:text-sm uppercase">{{ game.tournament_name }} &bull; {{ game.stage_name }}</div>
 
             <div class="divide-y divide-white/30">
 
@@ -16,9 +16,9 @@
 
                     <div class="w-20 lg:w-32 text-center">
                         
-                        <div class="text-3xl lg:text-5xl font-bold">{{ game.score }}</div>
+                        <div class="text-3xl lg:text-6xl font-bold">{{ game.score }}</div>
                         <div v-if="game.penalty_shootout">
-                            <span class="">{{ game.score_penalties }}</span>
+                            <span class="lg:text-xl">({{ game.score_penalties }})</span>
                         </div>
                     </div>
 
