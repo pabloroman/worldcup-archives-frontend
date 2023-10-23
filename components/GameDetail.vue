@@ -1,13 +1,13 @@
 <template>
     <div class="min-h-screen bg-center bg-white p-6 lg:p-0">
-        <div class="max-w-screen-lg mx-auto py-10">
+        <div class="max-w-screen-lg mx-auto">
 
-            <div class="lg:grid lg:grid-cols-3 lg:gap-x-8">
+            <div class="lg:grid lg:grid-cols-3 lg:gap-x-8 space-y-4">
 
                 <section>
                     <div class="flex items-center space-x-2">
                         <img class="h-6 rounded" :src="`/countries/${game.home_team.code}.svg`">
-                        <h2 class="text-2xl text-medium font-bold">{{ game.home_team.name }}</h2>
+                        <h2 class="text-2xl font-bold">{{ game.home_team.name }}</h2>
                     </div>
                     <div class="mt-1" v-for="manager in game.home_managers">
                         {{ manager.name }} ({{ manager.country }})
@@ -22,7 +22,7 @@
                 <section>
                     <div class="flex items-center space-x-2">
                         <img class="h-6 rounded" :src="`/countries/${game.away_team.code}.svg`">
-                        <h2 class="text-2xl text-medium font-bold">{{ game.away_team.name }}</h2>
+                        <h2 class="text-2xl font-bold">{{ game.away_team.name }}</h2>
                     </div>
                     <div class="mt-1" v-for="manager in game.away_managers">
                         {{ manager.name }} ({{ manager.country }})
