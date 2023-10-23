@@ -1,8 +1,8 @@
 <template>
 
-    <div class="">
+    <div v-if="!pending">
         <TournamentHeader :slug="route.params.tournament"></TournamentHeader>
-        <Team :team="route.params.team" :tournament="route.params.tournament"></Team>
+        <Team :team="team" :tournament="route.params.tournament"></Team>
     </div>
     
     </template>
@@ -13,5 +13,10 @@
     })
 
     const route = useRoute();
+
+    const { API_BASE_URL } = useRuntimeConfig().public;
+    const { data: team, pending } = await useLazyFetch(
+        API_BASE_URL + `/api/tournament/${route.params.tournament}/team/${route.params.team}`
+    );
 
     </script>
