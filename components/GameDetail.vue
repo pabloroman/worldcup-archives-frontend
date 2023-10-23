@@ -1,8 +1,8 @@
 <template>
-    <div class="min-h-screen bg-center bg-white p-6 lg:p-0">
+    <div class="min-h-screen bg-center bg-white p-6 lg:px-0 lg:py-12">
         <div class="max-w-screen-lg mx-auto">
 
-            <div class="lg:grid lg:grid-cols-3 lg:gap-x-8 space-y-4">
+            <div class="lg:grid lg:grid-cols-3 lg:gap-x-8 lg:space-y-0 space-y-4">
 
                 <section>
                     <div class="flex items-center space-x-2">
