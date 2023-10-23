@@ -36,7 +36,9 @@
                     <div class="flex flex-col justify-self-start">
                         <div v-for="goal in game.goals">
                             <div v-if="goal.home_team">
-                                <div class="text-xs lg:text-base text-left">{{  goal.name }} ({{ goal.minute }})</div>
+                                <div class="text-xs lg:text-base text-left">{{  goal.name }} ({{ goal.minute }})
+                                    <span v-if="goal.penalty"> (P)</span>
+                                    <span v-if="goal.own_goal"> (OG)</span></div>
                             </div>
                         </div>
                     </div>
@@ -46,7 +48,9 @@
                     <div class="flex flex-col justify-self-end">
                         <div v-for="goal in game.goals">
                             <div v-if="goal.away_team">
-                                <div class="text-xs lg:text-base text-right">{{  goal.name }} ({{ goal.minute }})<span v-if="goal.penalty"> (P)</span></div>
+                                <div class="text-xs lg:text-base text-right">{{  goal.name }} ({{ goal.minute }})
+                                    <span v-if="goal.penalty"> (P)</span>
+                                    <span v-if="goal.own_goal"> (OG)</span></div>
                             </div>
                         </div>
                     </div>
