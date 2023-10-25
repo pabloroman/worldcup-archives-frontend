@@ -14,11 +14,7 @@
 
                     <div class="col-span-2">
                         <h3 class="text-2xl">Games</h3>
-                        <table class="min-w-full table-auto text-left divide-y divide-gray-300">
-                            <tbody v-for="game in team.matches">
-                                <GamePreview :game="game" :tournament="route.params.tournament"></GamePreview>
-                            </tbody>
-                        </table>
+                        <GameList :games="team.matches"></GameList>
                     </div>
 
                     <div>

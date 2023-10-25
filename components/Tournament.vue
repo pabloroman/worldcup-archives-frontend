@@ -2,15 +2,11 @@
     <div v-if="!pendingGames && !pendingTeams">
 
         <div class="min-h-screen bg-center bg-gray-100 px-4 sm:px-6 lg:px-8">
-
+        <div class="max-w-screen-lg mx-auto">
             <div class="grid lg:grid-cols-3 gap-8 pt-8">
 
                 <div class="lg:col-span-2">
-                <table class="min-w-full table-auto text-left divide-y divide-gray-300">
-                    <tbody v-for="game in games">
-                    <GamePreview :game="game" :tournament="route.params.tournament"></GamePreview>
-                    </tbody>
-                </table>
+                    <GameList :games="games"></GameList>
                 </div>
 
                 <div class="lg:col-span-1">
@@ -25,7 +21,7 @@
                     </ul>
                 </div>
             </div>
-
+        </div>
         </div>
     </div>
 
