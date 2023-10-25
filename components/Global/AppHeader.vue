@@ -1,5 +1,5 @@
 <template>
-    <TournamentList></TournamentList>
+    <TournamentNavigation></TournamentNavigation>
 </template>
 
 <script setup>
