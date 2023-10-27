@@ -14,7 +14,7 @@
                     </div>
                     <div class="mt-4">
                     <div class="mt-1" v-for="squad_member in game.home_squad">
-                        <div class="space-x-2"><span>{{  squad_member.number }}</span><span>{{ squad_member.first_name }} {{  squad_member.last_name }}</span><span>{{  squad_member.position }}</span></div>
+                        <div class="space-x-2"><span>{{ squad_member.number }}</span><span>{{ squad_member.player }}</span><span>{{ squad_member.position }}</span></div>
                     </div>
                     </div>
                 </section>
@@ -29,7 +29,7 @@
                     </div>
                     <div class="mt-4">
                     <div class="mt-1" v-for="squad_member in game.away_squad">
-                        <div class="space-x-2"><span>{{  squad_member.number }}</span><span>{{ squad_member.first_name }} {{  squad_member.last_name }}</span><span>{{  squad_member.position }}</span></div>
+                        <div class="space-x-2"><span>{{ squad_member.number }}</span><span>{{ squad_member.player }}</span><span>{{ squad_member.position }}</span></div>
                     </div>
                 </div>
                 </section>

@@ -29,7 +29,7 @@
                         <ul class="mt-8 divide-y divide-gray-100">
                             <li class="group relative flex items-start space-x-4 py-4" v-for="member in team.players">
                                 <span>{{ member.shirt_number }}</span>
-                                <span>{{ member.first_name }} <span class="font-bold">{{ member.last_name }}</span></span>
+                                <span>{{ member.player }}</span>
                                 <span>{{ member.position }}</span>
                             </li>
                         </ul>
@@ -41,8 +41,6 @@
 </template>
 
 <script setup>
-
-    const route = useRoute();
 
     const props = defineProps({
         team: {

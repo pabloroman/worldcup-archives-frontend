@@ -2,7 +2,7 @@
     <header style="background-color: #260eae;" class="text-white">
         <div class="max-w-screen-lg mx-auto p-4 lg:px-0 lg:py-8">
 
-            <div class="text-center text-[10px] lg:text-sm uppercase">{{ game.tournament_name }} &bull; {{ game.stage_name }}</div>
+            <div class="text-center text-[10px] lg:text-sm uppercase"><NuxtLink :to="'/tournaments/'+route.params.tournament">{{ game.tournament_name }} &bull; {{ game.stage_name }}</NuxtLink></div>
 
             <div class="divide-y divide-white/30">
 
@@ -62,6 +62,8 @@
 </template>
 
 <script setup>
+
+    const route = useRoute();
 
     const props = defineProps({
         game: {
