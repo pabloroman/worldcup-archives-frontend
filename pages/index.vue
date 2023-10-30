@@ -12,9 +12,6 @@
           <th class="px-3 py-4">Host country</th>
           <th class="px-3 py-4">Winner</th>
           <th class="px-3 py-4">Teams</th>
-          <th class="px-3 py-4 hidden md:table-cell">Golden Ball (best player)</th>
-          <th class="px-3 py-4 hidden md:table-cell">Golden Boot (top scorer)</th>
-          <th class="px-3 py-4 hidden md:table-cell">Golden Glove (best keeper)</th>
         </tr>
       </thead>
       <tbody class="divide-y divide-gray-200 bg-white">
@@ -37,15 +34,6 @@
         </td>
         <td class="align-top px-3 py-4">
           {{ tournament.count_teams }}
-        </td>
-        <td class="align-top px-3 py-4 hidden md:table-cell">
-          <TournamentAward :awards="tournament.awards" name="golden ball"></TournamentAward>
-        </td>
-        <td class="align-top px-3 py-4 hidden md:table-cell">
-          <TournamentAward :awards="tournament.awards" name="golden boot"></TournamentAward>
-        </td>
-        <td class="align-top px-3 py-4 hidden md:table-cell">
-          <TournamentAward :awards="tournament.awards" name="golden glove"></TournamentAward>
         </td>
       </tr>
     </tbody>

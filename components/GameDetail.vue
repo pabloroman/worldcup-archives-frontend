@@ -13,8 +13,12 @@
                         {{ manager.name }} ({{ manager.country }})
                     </div>
                     <div class="mt-4">
-                    <div class="mt-1" v-for="squad_member in game.home_squad">
-                        <div class="space-x-2"><span>{{ squad_member.number }}</span><span>{{ squad_member.player }}</span><span>{{ squad_member.position }}</span></div>
+                    <div class="mt-1" v-for="squad_member in game.home_squad.filter(squad_member => squad_member.starter == 1)">
+                        <GamePlayerAppearance :player="squad_member" :home_team="true" :bookings="game.bookings"></GamePlayerAppearance>
+                    </div>
+                    <div class="font-bold">Subs</div>
+                    <div class="mt-1" v-for="squad_member in game.home_squad.filter(squad_member => squad_member.starter == 0)">
+                        <GamePlayerAppearance :player="squad_member" :home_team="true" :bookings="game.bookings"></GamePlayerAppearance>
                     </div>
                     </div>
                 </section>
@@ -28,8 +32,12 @@
                         {{ manager.name }} ({{ manager.country }})
                     </div>
                     <div class="mt-4">
-                    <div class="mt-1" v-for="squad_member in game.away_squad">
-                        <div class="space-x-2"><span>{{ squad_member.number }}</span><span>{{ squad_member.player }}</span><span>{{ squad_member.position }}</span></div>
+                    <div class="mt-1" v-for="squad_member in game.away_squad.filter(squad_member => squad_member.starter == 1)">
+                        <GamePlayerAppearance :player="squad_member" :home_team="false" :bookings="game.bookings"></GamePlayerAppearance>
+                    </div>
+                    <div class="font-bold">Subs</div>
+                    <div class="mt-1" v-for="squad_member in game.away_squad.filter(squad_member => squad_member.starter == 0)">
+                        <GamePlayerAppearance :player="squad_member" :home_team="false" :bookings="game.bookings"></GamePlayerAppearance>
                     </div>
                 </div>
                 </section>
