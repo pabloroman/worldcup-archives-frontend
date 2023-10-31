@@ -16,7 +16,7 @@
                     <div class="mt-1" v-for="squad_member in game.home_squad.filter(squad_member => squad_member.starter == 1)">
                         <GamePlayerAppearance :player="squad_member" :home_team="true" :bookings="game.bookings"></GamePlayerAppearance>
                     </div>
-                    <div class="font-bold">Subs</div>
+                    <div class="font-bold mt-2">Subs</div>
                     <div class="mt-1" v-for="squad_member in game.home_squad.filter(squad_member => squad_member.starter == 0)">
                         <GamePlayerAppearance :player="squad_member" :home_team="true" :bookings="game.bookings"></GamePlayerAppearance>
                     </div>
@@ -35,7 +35,7 @@
                     <div class="mt-1" v-for="squad_member in game.away_squad.filter(squad_member => squad_member.starter == 1)">
                         <GamePlayerAppearance :player="squad_member" :home_team="false" :bookings="game.bookings"></GamePlayerAppearance>
                     </div>
-                    <div class="font-bold">Subs</div>
+                    <div class="font-bold mt-2">Subs</div>
                     <div class="mt-1" v-for="squad_member in game.away_squad.filter(squad_member => squad_member.starter == 0)">
                         <GamePlayerAppearance :player="squad_member" :home_team="false" :bookings="game.bookings"></GamePlayerAppearance>
                     </div>
