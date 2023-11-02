@@ -2,7 +2,11 @@
 module.exports = {
   content: [],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'sans': ['Gabarito', 'sans-serif']
+      }
+    }
   },
   plugins: [
     require('@tailwindcss/forms'),

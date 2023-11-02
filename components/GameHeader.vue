@@ -1,8 +1,8 @@
 <template>
-    <header style="background-color: #260eae;" class="text-white">
+    <header class="bg-gradient-to-br from-[#0E1E2C] from-20% via-[#000000] via-30% to-[#283B45] text-white">
         <div class="max-w-screen-lg mx-auto p-4 lg:px-0 lg:py-8">
 
-            <div class="text-center text-[10px] lg:text-sm uppercase"><NuxtLink :to="'/tournaments/'+route.params.tournament">{{ game.tournament_name }} &bull; {{ game.stage_name }}</NuxtLink></div>
+            <div class="text-center text-[10px] lg:text-base text-slate-400 uppercase"><NuxtLink :to="'/tournaments/'+route.params.tournament">{{ game.tournament_name }} &bull; {{ game.stage_name }}</NuxtLink></div>
 
             <div class="divide-y divide-white/30">
 
@@ -10,7 +10,7 @@
                     <div class="flex justify-self-start">
                         <div class="flex items-center space-x-2 lg:space-x-4">
                             <img class="h-6 lg:h-12 rounded" :src="`/countries/${game.home_team.code}.svg`">
-                            <h2 class="text-xl lg:text-3xl font-bold">{{ game.home_team.name }}</h2>
+                            <h2 class="text-xl lg:text-4xl uppercase font-bold">{{ game.home_team.name }}</h2>
                         </div>
                     </div>
 
@@ -24,7 +24,7 @@
 
                     <div class="flex justify-self-end">
                         <div class="flex items-center space-x-2 lg:space-x-4">
-                            <h2 class="text-xl lg:text-3xl font-bold">{{ game.away_team.name }}</h2>
+                            <h2 class="text-xl lg:text-4xl uppercase font-bold">{{ game.away_team.name }}</h2>
                             <img class="h-6 lg:h-12 rounded" :src="`/countries/${game.away_team.code}.svg`">
                         </div>
 
@@ -36,7 +36,7 @@
                     <div class="flex flex-col justify-self-start">
                         <div v-for="goal in game.goals">
                             <div v-if="goal.home_team">
-                                <div class="text-xs lg:text-base text-left">{{  goal.name }} ({{ goal.minute }})
+                                <div class="text-xs lg:text-base text-slate-400 text-left">{{  goal.name }} ({{ goal.minute }})
                                     <span v-if="goal.penalty"> (P)</span>
                                     <span v-if="goal.own_goal"> (OG)</span></div>
                             </div>
@@ -48,7 +48,7 @@
                     <div class="flex flex-col justify-self-end">
                         <div v-for="goal in game.goals">
                             <div v-if="goal.away_team">
-                                <div class="text-xs lg:text-base text-right">{{  goal.name }} ({{ goal.minute }})
+                                <div class="text-xs lg:text-base text-slate-400 text-right">{{  goal.name }} ({{ goal.minute }})
                                     <span v-if="goal.penalty"> (P)</span>
                                     <span v-if="goal.own_goal"> (OG)</span></div>
                             </div>

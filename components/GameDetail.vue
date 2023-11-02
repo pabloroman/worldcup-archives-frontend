@@ -9,7 +9,7 @@
                         <img class="h-6 rounded" :src="`/countries/${game.home_team.code}.svg`">
                         <h2 class="text-2xl font-bold">{{ game.home_team.name }}</h2>
                     </div>
-                    <div class="mt-1" v-for="manager in game.home_managers">
+                    <div class="mt-1 text-lg" v-for="manager in game.home_managers">
                         {{ manager.name }} ({{ manager.country }})
                     </div>
                     <div class="mt-4">
@@ -28,7 +28,7 @@
                         <img class="h-6 rounded" :src="`/countries/${game.away_team.code}.svg`">
                         <h2 class="text-2xl font-bold">{{ game.away_team.name }}</h2>
                     </div>
-                    <div class="mt-1" v-for="manager in game.away_managers">
+                    <div class="mt-1 text-lg" v-for="manager in game.away_managers">
                         {{ manager.name }} ({{ manager.country }})
                     </div>
                     <div class="mt-4">
@@ -44,14 +44,15 @@
 
                 <section>
                     
-                    <h5 class="font-bold">Date</h5>
-                    <p>{{ game.match_date }}, {{ game.match_time }}</p>
-                    
-                    <h5 class="font-bold mt-2">Stadium</h5>
-                    <p>{{ game.stadium.name }} &bull; {{ game.stadium.city }}, {{ game.stadium.country }}</p>
-                    
-                    <h5 class="font-bold mt-2">Referee</h5>
-                    <p>{{  game.referee.name }} ({{  game.referee.country }})</p>
+                    <h5 class="uppercase text-slate-400">Date</h5>
+                    <p class="text-lg mb-4">{{ game.match_date }}, {{ game.match_time }}</p>
+
+                    <h5 class="uppercase text-slate-400">Stadium</h5>
+                    <p class="text-lg mb-4">{{ game.stadium.name }} &bull; {{ game.stadium.city }}, {{ game.stadium.country }}</p>
+
+
+                    <h5 class="uppercase text-slate-400">Referee</h5>
+                    <p class="text-lg mb-4">{{  game.referee.name }} ({{  game.referee.country }})</p>
                 </section>
             </div>
         </div>

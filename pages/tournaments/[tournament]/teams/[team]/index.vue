@@ -1,7 +1,7 @@
 <template>
 
     <div v-if="!pending">
-        <Team :team="team" :tournament="route.params.tournament"></Team>
+        <Team :team="team"></Team>
     </div>
     
     </template>

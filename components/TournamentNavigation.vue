@@ -1,10 +1,11 @@
 <template>
 
     <div v-if="!pending">
-        <div id="tournament-list" class="flex h-16 px-6 items-center overflow-x-scroll space-x-6 sm:space-x-8">
+        <div id="tournament-list" class="flex h-12 px-6 lg:px-8 items-center overflow-x-scroll space-x-6 sm:space-x-8">
+            <NuxtLink to="/"><span class="whitespace-nowrap uppercase tracking-wide text-sm font-bold">The World Cup Archives</span></NuxtLink>
         <div v-for="tournament in tournaments">
-            <NuxtLink :to="'/tournaments/'+tournament.id">
-                <span class="whitespace-nowrap">{{ tournament.host_country }} {{ tournament.year }}</span>
+            <NuxtLink :to="'/tournaments/'+tournament.id" class="text-slate-400 hover:text-slate-900">
+                <span class="whitespace-nowrap uppercase tracking-wide text-sm">{{ tournament.host_country }} {{ tournament.year }}</span>
             </NuxtLink>
         </div>
     </div>
