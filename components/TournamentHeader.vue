@@ -5,7 +5,7 @@
                 <div class="text-white opacity-75">{{ tournament.name }}</div>
                 <div class="flex items-center space-x-4 mt-2">
                 <HostFlag :tournament="tournament"></HostFlag>
-                <h1 class="text-5xl font-bold uppercase text-white shadow-md">{{ tournament.host_country }} {{ tournament.year }}</h1>
+                <h1 class="text-4xl lg:text-5xl font-bold uppercase text-white shadow-md">{{ tournament.host_country }} {{ tournament.year }}</h1>
             </div>
             </div>
         </header>

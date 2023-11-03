@@ -1,7 +1,7 @@
 <template>
     <div class="flex justify-between">
     <div class="space-x-2 text-lg">
-        <span>{{ player.number }}</span><span>{{ player.player }}</span><span>{{ player.position }}</span>
+        <span class="font-bold">{{ player.number }}</span><span>{{ player.player }}</span><span class="text-sm text-slate-400" >{{ player.position }}</span>
     </div>
     <div v-for="booking in bookings.filter(booking => booking.home_team == home_team && player.player == booking.name)">
         <div v-if="booking.yellow_card">

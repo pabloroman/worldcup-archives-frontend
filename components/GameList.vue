@@ -3,42 +3,42 @@
 <table class="min-w-full table-auto text-left divide-y divide-gray-300">
 
     <template v-if="props.games.find(game => game.stage_name == 'final')">
-    <tr><th class="px-3 pb-2 pt-10 uppercase font-normal text-sm text-slate-400" colspan="3">Final</th></tr>
+    <tr><th class="pb-2 pt-6 uppercase font-normal text-sm text-slate-400" colspan="3">Final</th></tr>
     <tbody v-for="game in props.games.filter(game => game.stage_name == 'final')">
         <GamePreview :game="game" :tournament="route.params.tournament"></GamePreview>
     </tbody>
     </template>
 
     <template v-if="props.games.find(game => game.stage_name == 'final round')">
-    <tr><th class="px-3 pb-2 pt-10 uppercase font-normal text-sm text-slate-400" colspan="3">Final round</th></tr>
+    <tr><th class="pb-2 pt-6 uppercase font-normal text-sm text-slate-400" colspan="3">Final round</th></tr>
     <tbody v-for="game in props.games.filter(game => game.stage_name == 'final round')">
         <GamePreview :game="game" :tournament="route.params.tournament"></GamePreview>
     </tbody>
     </template>
 
     <template v-if="props.games.find(game => game.stage_name == 'third-place match')">
-    <tr><th class="px-3 pb-2 pt-10 uppercase font-normal text-sm text-slate-400" colspan="3">Third-place match</th></tr>
+    <tr><th class="pb-2 pt-6 uppercase font-normal text-sm text-slate-400" colspan="3">Third-place match</th></tr>
     <tbody v-for="game in props.games.filter(game => game.stage_name == 'third-place match')">
         <GamePreview :game="game" :tournament="route.params.tournament"></GamePreview>
     </tbody>
     </template>
 
     <template v-if="props.games.find(game => game.stage_name == 'semi-finals')">
-    <tr><th class="px-3 pb-2 pt-10 uppercase font-normal text-sm text-slate-400" colspan="3">Semi-finals</th></tr>
+    <tr><th class="pb-2 pt-6 uppercase font-normal text-sm text-slate-400" colspan="3">Semi-finals</th></tr>
     <tbody v-for="game in props.games.filter(game => game.stage_name == 'semi-finals')">
         <GamePreview :game="game" :tournament="route.params.tournament"></GamePreview>
     </tbody>
     </template>
 
     <template v-if="props.games.find(game => game.stage_name == 'quarter-finals')">
-    <tr><th class="px-3 pb-2 pt-10 uppercase font-normal text-sm text-slate-400" colspan="3">Quarter-finals</th></tr>
+    <tr><th class="pb-2 pt-6 uppercase font-normal text-sm text-slate-400" colspan="3">Quarter-finals</th></tr>
     <tbody v-for="game in props.games.filter(game => game.stage_name == 'quarter-finals')">
         <GamePreview :game="game" :tournament="route.params.tournament"></GamePreview>
     </tbody>
     </template>
 
     <template v-if="props.games.find(game => game.stage_name == 'round of 16')">
-    <tr><th class="px-3 pb-2 pt-10 uppercase font-normal text-sm text-slate-400" colspan="3">Round of 16</th></tr>
+    <tr><th class="pb-2 pt-6 uppercase font-normal text-sm text-slate-400" colspan="3">Round of 16</th></tr>
     <tbody v-for="game in props.games.filter(game => game.stage_name == 'round of 16')">
         <GamePreview :game="game" :tournament="route.params.tournament"></GamePreview>
     </tbody>
@@ -46,13 +46,13 @@
 
     
     <template v-if="props.games.find(game => game.stage_name == 'second group stage')">
-    <tr><th class="px-3 pb-2 pt-10 uppercase font-normal text-sm text-slate-400" colspan="3">Second group stage</th></tr>
+    <tr><th class="pb-2 pt-6 uppercase font-normal text-sm text-slate-400" colspan="3">Second group stage</th></tr>
     <tbody v-for="game in props.games.filter(game => game.stage_name == 'second group stage')">
         <GamePreview :game="game" :tournament="route.params.tournament"></GamePreview>
     </tbody>
     </template>
 
-    <tr><th class="px-3 pb-2 pt-10 uppercase font-normal text-sm text-slate-400" colspan="3">Group stage</th></tr>
+    <tr><th class="pb-2 pt-6 uppercase font-normal text-sm text-slate-400" colspan="3">Group stage</th></tr>
     <tbody v-for="game in props.games.filter(game => game.stage_name == 'group stage')">
         <GamePreview :game="game" :tournament="route.params.tournament"></GamePreview>
     </tbody>
