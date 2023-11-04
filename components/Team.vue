@@ -4,8 +4,8 @@
     <div v-else>
         <header class="bg-gradient-to-br from-[#0E1E2C] from-20% via-[#000000] via-30% to-[#283B45]">
             <div class="max-w-screen-lg mx-auto py-10 px-6 lg:px-0">
-                <!-- <div class="text-white opacity-75">{{ team.tournament.name }}</div> -->
-                <div class="flex items-center space-x-4">
+                <div class="text-white opacity-75">{{ team.tournament.name }}</div>
+                <div class="flex items-center space-x-4 mt-2">
                     <img class="h-8 lg:h-12 rounded" :src="`/countries/${team.country.code}.svg`">
                     <h1 class="text-4xl lg:text-5xl font-bold uppercase text-white shadow-md">{{ team.country.name }}</h1>
                 </div>
