@@ -98,6 +98,16 @@
                             </NuxtLink>
                         </li>
                     </ul>
+
+                    <h3 class="text-xl uppercase text-slate-400 mt-6">Stadiums</h3>
+                    <ul class="divide-y divide-gray-200 mt-8">
+                        <li class="group relative flex flex-col items-start bg-white" v-for="stadium in tournament.stadiums">
+                            <div class="w-full px-4 py-2">
+                                <div class="lg:text-lg">{{ stadium.name }}</div>
+                                <div class="text-slate-400">{{ stadium.city }}, {{ stadium.country }} &bull; {{ stadium.capacity }}</div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
