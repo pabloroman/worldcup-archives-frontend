@@ -8,10 +8,10 @@
                     <NuxtLink :to="'/tournaments/'+tournament+'/teams/'+game.home_team.code">
                     <div class="flex items-center space-x-2">
                         <img class="h-6 rounded" :src="`/countries/${game.home_team.code}.svg`">
-                        <h2 class="text-2xl font-bold uppercase">{{ game.home_team.name }}</h2>
+                        <h2 class="text-lg lg:text-2xl font-bold uppercase">{{ game.home_team.name }}</h2>
                     </div>
                     </NuxtLink>
-                    <div class="mt-1 text-lg" v-for="manager in game.home_managers">
+                    <div class="mt-1 lg:text-lg" v-for="manager in game.home_managers">
                         {{ manager.name }} ({{ manager.country }})
                     </div>
                     <div class="mt-6">
@@ -31,10 +31,10 @@
                     <NuxtLink :to="'/tournaments/'+tournament+'/teams/'+game.away_team.code">
                     <div class="flex items-center space-x-2">
                         <img class="h-6 rounded" :src="`/countries/${game.away_team.code}.svg`">
-                        <h2 class="text-2xl font-bold uppercase">{{ game.away_team.name }}</h2>
+                        <h2 class="text-lg lg:text-2xl font-bold uppercase">{{ game.away_team.name }}</h2>
                     </div>
                     </NuxtLink>
-                    <div class="mt-1 text-lg" v-for="manager in game.away_managers">
+                    <div class="mt-1 lg:text-lg" v-for="manager in game.away_managers">
                         {{ manager.name }} ({{ manager.country }})
                     </div>
 
@@ -65,15 +65,15 @@
                             <img :src=game.image class="rounded">
                         </a>
                     </div>
-                    <h5 class="uppercase text-slate-400">Date</h5>
-                    <p class="text-lg mb-6">{{ game.match_date }}, {{ game.match_time }}</p>
+                    <h5 class="text-sm lg:text-base uppercase text-slate-400">Date</h5>
+                    <p class="lg:text-lg mb-6">{{ game.match_date }}, {{ game.match_time }}</p>
 
-                    <h5 class="uppercase text-slate-400">Stadium</h5>
-                    <p class="text-lg mb-6">{{ game.stadium.name }} &bull; {{ game.stadium.city }}, {{ game.stadium.country }}</p>
+                    <h5 class="text-sm lg:text-base uppercase text-slate-400">Stadium</h5>
+                    <p class="lg:text-lg mb-6">{{ game.stadium.name }} &bull; {{ game.stadium.city }}, {{ game.stadium.country }}</p>
 
 
-                    <h5 class="uppercase text-slate-400">Referee</h5>
-                    <p class="text-lg mb-6">{{  game.referee.name }} ({{  game.referee.country }})</p>
+                    <h5 class="text-sm lg:text-base uppercase text-slate-400">Referee</h5>
+                    <p class="lg:text-lg mb-6">{{  game.referee.name }} ({{  game.referee.country }})</p>
                 </section>
             </div>
         </div>

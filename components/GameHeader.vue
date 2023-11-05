@@ -8,13 +8,13 @@
 
                 <div class="grid grid-cols-[1fr,auto,1fr] py-2 lg:py-6">
                     <div class="flex justify-self-start">
-                        <div class="flex items-center space-x-2 lg:space-x-4">
-                            <img class="h-6 lg:h-12 rounded" :src="`/countries/${game.home_team.code}.svg`">
-                            <h2 class="text-lg lg:text-4xl uppercase font-bold">{{ game.home_team.name }}</h2>
+                        <div class="flex items-center space-x-2 lg:space-x-4 flex-col lg:flex-row">
+                            <img class="h-6 lg:h-12 rounded lg:order-first" :src="`/countries/${game.home_team.code}.svg`">
+                            <h2 class="text-lg lg:text-4xl uppercase font-bold lg:order-last text-center">{{ game.home_team.name }}</h2>
                         </div>
                     </div>
 
-                    <div class="w-20 lg:w-32 text-center">
+                    <div class="w-20 lg:w-32 text-center flex items-center justify-center">
                         
                         <div class="text-3xl lg:text-6xl font-bold">{{ game.score }}</div>
                         <div v-if="game.penalty_shootout">
@@ -23,9 +23,9 @@
                     </div>
 
                     <div class="flex justify-self-end">
-                        <div class="flex items-center space-x-2 lg:space-x-4">
-                            <h2 class="text-lg lg:text-4xl uppercase font-bold">{{ game.away_team.name }}</h2>
-                            <img class="h-6 lg:h-12 rounded" :src="`/countries/${game.away_team.code}.svg`">
+                        <div class="flex items-center space-x-2 lg:space-x-4 flex-col lg:flex-row lg:space-x-reverse">
+                            <img class="h-6 lg:h-12 rounded lg:order-last" :src="`/countries/${game.away_team.code}.svg`">
+                            <h2 class="text-lg lg:text-4xl uppercase font-bold lg:order-first text-center">{{ game.away_team.name }}</h2>
                         </div>
 
                     </div>

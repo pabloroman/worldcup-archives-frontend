@@ -1,6 +1,6 @@
 <template>
     <div class="flex justify-between">
-    <div class="space-x-2 text-lg">
+    <div class="space-x-2 lg:text-lg">
         <span class="font-bold">{{ player.number }}</span><span>{{ player.player }}</span><span class="text-sm text-slate-400" >{{ player.position }}</span>
     </div>
     <div v-for="booking in bookings.filter(booking => booking.home_team == home_team && player.player == booking.name)">
