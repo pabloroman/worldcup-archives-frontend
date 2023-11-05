@@ -12,7 +12,7 @@
                         <span>{{ game.away_team.name }}</span><img class="h-4 lg:h-6 rounded" :src="`/countries/${game.away_team.code}.svg`">
                     </div>
                 </div>
-                <div class="invisible lg:visible text-slate-400 justify-self-end text-right">{{ game.match_date }}, {{ game.match_time }}</div>
+                <div class="hidden lg:block text-slate-400 justify-self-end text-right">{{ game.match_date }}, {{ game.match_time }}</div>
             </div>
         </NuxtLink>
         </td>
