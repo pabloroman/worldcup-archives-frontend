@@ -7,6 +7,9 @@
                 <HostFlag :tournament="tournament"></HostFlag>
                 <h1 class="text-4xl lg:text-5xl font-bold uppercase text-white shadow-md">{{ tournament.host_country }} {{ tournament.year }}</h1>
             </div>
+            <template v-if="tournament.description">
+                <p class="mt-6 text-white text-lg whitespace-pre-line text-slate-300">{{ tournament.description }}</p>
+            </template>
             </div>
         </header>
     </div>
