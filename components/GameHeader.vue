@@ -14,8 +14,7 @@
                         </div>
                     </div>
 
-                    <div class="w-20 lg:w-32 text-center flex items-center justify-center">
-                        
+                    <div class="w-20 lg:w-32 text-center flex flex-col items-center justify-center">
                         <div class="text-3xl lg:text-6xl font-bold">{{ game.score }}</div>
                         <div v-if="game.penalty_shootout">
                             <span class="lg:text-xl">({{ game.score_penalties }})</span>
