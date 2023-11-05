@@ -9,7 +9,7 @@
                 <div>
                 <NuxtLink :to="'/tournaments/'+tournament.id+'/teams/'+tournament.standings[0].team_code">
                 <div class="flex items-center space-x-2 lg:space-x-4">
-                    <img class="h-6 lg:h-12 rounded" :src="`/countries/${tournament.standings[0].team_code}.svg`">
+                    <img class="h-6 lg:h-12 rounded shadow" :src="`/countries/${tournament.standings[0].team_code}.svg`">
                     <h2 class="text-xl lg:text-3xl font-bold uppercase">{{ tournament.standings[0].team_name }}</h2>
                 </div>
                 </NuxtLink>
@@ -20,7 +20,7 @@
                 <div>
                 <NuxtLink :to="'/tournaments/'+tournament.id+'/teams/'+tournament.standings[1].team_code">
                 <div class="flex items-center space-x-2 lg:space-x-4">
-                    <img class="h-6 lg:h-12 rounded" :src="`/countries/${tournament.standings[1].team_code}.svg`">
+                    <img class="h-6 lg:h-12 rounded shadow" :src="`/countries/${tournament.standings[1].team_code}.svg`">
                     <h2 class="text-xl lg:text-3xl font-bold uppercase">{{ tournament.standings[1].team_name }}</h2>
                 </div>
                 </NuxtLink>
@@ -31,7 +31,7 @@
                 <div>
                 <NuxtLink :to="'/tournaments/'+tournament.id+'/teams/'+tournament.standings[2].team_code">
                 <div class="flex items-center space-x-2 lg:space-x-4">
-                    <img class="h-6 lg:h-12 rounded" :src="`/countries/${tournament.standings[2].team_code}.svg`">
+                    <img class="h-6 lg:h-12 rounded shadow" :src="`/countries/${tournament.standings[2].team_code}.svg`">
                     <h2 class="text-xl lg:text-3xl font-bold uppercase">{{ tournament.standings[2].team_name }}</h2>
                 </div>
                 </NuxtLink>
@@ -39,10 +39,9 @@
             </div>
         </div>
     
+        <hr class="lg:hidden">
 
-    <hr class="lg:hidden">
-
-    <div class="lg:col-span-2">
+        <div class="lg:col-span-2">
         <div class="grid lg:grid-cols-3 gap-6">
             <div class="space-y-1" v-if="tournament.awards.find(award => award.award_name.toLowerCase() == 'golden ball')">
                 <div class="uppercase text-sm text-slate-400">Golden Ball (best player)</div>
