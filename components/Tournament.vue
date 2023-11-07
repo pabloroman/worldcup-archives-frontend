@@ -78,7 +78,7 @@
 
     <div v-if="!pendingGames && !pendingTeams">
 
-        <div class="min-h-screen bg-center bg-gray-100 px-4 sm:px-6 lg:px-8">
+        <div class="min-h-screen bg-center bg-slate-100 px-4 sm:px-6 lg:px-8">
         <div class="max-w-screen-lg mx-auto">
             <div class="grid lg:grid-cols-3 gap-8 py-8">
 
