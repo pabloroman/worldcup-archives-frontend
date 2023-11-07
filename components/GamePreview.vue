@@ -1,7 +1,7 @@
 <template>
     <tr>
         <td class="align-middle whitespace-nowrap">
-        <NuxtLink :to="'/tournaments/'+route.params.tournament+'/games/'+game.id" class="w-full block py-1 lg:py-3">
+        <NuxtLink :to="'/tournaments/'+tournament+'/games/'+game.id" class="w-full block py-1 lg:py-3">
             <div class="flex space-x-3 items-center w-full justify-items-stretch">
                 <div class="flex-grow flex space-x-3 items-center">
                     <div class="font-medium flex items-center space-x-2 text-base lg:text-lg">
@@ -20,8 +20,6 @@
 </template>
 
 <script setup>
-
-    const route = useRoute();
 
     const props = defineProps({
         game: {

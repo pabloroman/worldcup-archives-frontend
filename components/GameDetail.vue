@@ -1,10 +1,10 @@
 <template>
     <div class="min-h-screen bg-center bg-white p-6 lg:px-0 lg:py-12">
-        <div class="max-w-screen-lg mx-auto">
+        <div class="max-w-screen-lg mx-auto space-y-8 divide-y divide-grey-300">
 
             <div class="lg:grid lg:grid-cols-3 lg:gap-x-8 lg:space-y-0 space-y-6 divide-y divide-grey-300 lg:divide-none">
 
-                <section v-if="game.home_squad.length">
+                <section>
                     <NuxtLink :to="'/tournaments/'+tournament+'/teams/'+game.home_team.code">
                     <div class="flex items-center space-x-2">
                         <img class="h-6 rounded" :src="`/countries/${game.home_team.code}.svg`">
@@ -14,7 +14,7 @@
                     <div class="mt-1 lg:text-lg" v-for="manager in game.home_managers">
                         {{ manager.name }} ({{ manager.country }})
                     </div>
-                    <div class="mt-6">
+                    <div class="mt-6" v-if="game.home_squad.length">
                         <div class="mt-1" v-for="squad_member in game.home_squad.filter(squad_member => squad_member.starter == 1)">
                             <GamePlayerAppearance :player="squad_member" :home_team="true" :bookings="game.bookings"></GamePlayerAppearance>
                         </div>
@@ -25,9 +25,12 @@
                         </div>
                         </template>
                     </div>
+                    <div v-else>
+                        <p class="text-slate-400 text-lg mt-6">No lineup available</p>
+                    </div>
                 </section>
 
-                <section v-if="game.away_squad.length" class="pt-6 lg:pt-0">
+                <section class="pt-6 lg:pt-0">
                     <NuxtLink :to="'/tournaments/'+tournament+'/teams/'+game.away_team.code">
                     <div class="flex items-center space-x-2">
                         <img class="h-6 rounded" :src="`/countries/${game.away_team.code}.svg`">
@@ -38,7 +41,7 @@
                         {{ manager.name }} ({{ manager.country }})
                     </div>
 
-                    <div class="mt-6" >
+                    <div class="mt-6" v-if="game.away_squad.length">
                         <div class="mt-1" v-for="squad_member in game.away_squad.filter(squad_member => squad_member.starter == 1)">
                             <GamePlayerAppearance :player="squad_member" :home_team="false" :bookings="game.bookings"></GamePlayerAppearance>
                         </div>
@@ -49,7 +52,9 @@
                         </div>
                         </template>
                     </div>
-
+                    <div v-else>
+                        <p class="text-slate-400 text-lg mt-6">No lineup available</p> 
+                    </div>
                 </section>
 
                 <section class="pt-6 lg:pt-0">
@@ -76,6 +81,21 @@
                     <p class="lg:text-lg mb-6">{{  game.referee.name }} ({{  game.referee.country }})</p>
                 </section>
             </div>
+
+
+            <template v-if="game.similar_games">
+                <div class="lg:grid lg:grid-cols-3 py-6 lg:gap-x-8 lg:space-y-0 space-y-6 divide-y divide-grey-300 lg:divide-none">
+                <section class="col-span-2">
+                    <h5 class="text-sm lg:text-base uppercase text-slate-400">Other matches between {{ game.home_team.name }} and {{  game.away_team.name }}</h5>
+                    <table class="min-w-full table-auto text-left divide-y divide-gray-300">
+                        <template v-for="similar_game in game.similar_games">
+                            <GamePreview :game="similar_game" :tournament="similar_game.tournament_id"></GamePreview>
+                        </template>
+                    </table>
+                </section>
+                </div>
+            </template>
+
         </div>
     </div>
 </template>
