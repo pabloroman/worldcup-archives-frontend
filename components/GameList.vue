@@ -52,10 +52,12 @@
     </tbody>
     </template>
 
+    <template v-if="props.games.find(game => game.stage_name == 'group stage')">
     <tr><th class="pb-2 pt-6 uppercase font-normal text-sm text-slate-400" colspan="3">Group stage</th></tr>
     <tbody v-for="game in props.games.filter(game => game.stage_name == 'group stage')">
         <GamePreview :game="game" :tournament="route.params.tournament"></GamePreview>
     </tbody>
+    </template>
 </table>
 
 </template>
