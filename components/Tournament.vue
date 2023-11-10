@@ -91,6 +91,55 @@
         </div>
     </section>
 
+    <section v-if="!pendingGroups" class="px-4 sm:px-6 lg:px-8">
+        <div class="max-w-screen-lg mx-auto py-6 lg:py-10 space-y-8">
+            <!-- <h3 class="text-xl uppercase text-slate-400">Groups</h3> -->
+
+            <div v-for="stage in groups">
+                <h4 class="text-xl uppercase text-slate-400">{{ stage.name }}</h4>
+                <div class="grid lg:grid-cols-2 gap-x-16 gap-y-8 py-4">
+                <div v-for="group in stage.groups">
+                    <table class="min-w-full table-fixed text-right divide-y divide-gray-300">
+                        <thead>
+                            <tr>
+                                <th class="text-left">{{ group.name }}</th>
+                                <th class="w-1/12">MP</th>
+                                <th class="w-1/12">W</th>
+                                <th class="w-1/12">D</th>
+                                <th class="w-1/12">L</th>
+                                <th class="w-1/12">GF</th>
+                                <th class="w-1/12">GA</th>
+                                <th class="w-1/12">Pts</th>
+                            </tr>
+                        </thead>
+                        <tbody v-for="standing in group.groupStandings">
+                            <tr>
+                                <td class="align-middle whitespace-nowrap py-1">
+                                    <div class="flex space-x-3 items-center">
+                                    <div class="text-slate-400">{{ standing.position }}</div>
+                                    <template v-if="standing.advanced">
+                                        <img class="h-5 lg:h-6 rounded" :src="`/countries/${standing.team_code}.svg`"><span class="font-bold">{{ standing.team_name }}</span>
+                                    </template>
+                                    <template v-else>
+                                        <img class="h-5 lg:h-6 rounded" :src="`/countries/${standing.team_code}.svg`"><span>{{ standing.team_name }}</span>
+                                    </template>
+                                    </div>
+                                </td>
+                                <td class="align-middle whitespace-nowrap">{{ standing.played }}</td>
+                                <td class="align-middle whitespace-nowrap">{{ standing.wins }}</td>
+                                <td class="align-middle whitespace-nowrap">{{ standing.draws }}</td>
+                                <td class="align-middle whitespace-nowrap">{{ standing.losses }}</td>
+                                <td class="align-middle whitespace-nowrap">{{ standing.goals_for }}</td>
+                                <td class="align-middle whitespace-nowrap">{{ standing.goals_against }}</td>
+                                <td class="align-middle whitespace-nowrap"><strong>{{ standing.points }}</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <section v-if="!pendingTeams" class="px-4 sm:px-6 lg:px-8">
         <div class="max-w-screen-lg mx-auto py-6 lg:py-10">
             <h3 class="text-xl uppercase text-slate-400">Qualified teams</h3>
@@ -156,5 +205,8 @@
     );
     const { data: games, pending: pendingGames } = await useLazyFetch(
         API_BASE_URL + `/api/tournament/${props.slug}/games`
+    );
+    const { data: groups, pending: pendingGroups } = await useLazyFetch(
+        API_BASE_URL + `/api/tournament/${props.slug}/groups`
     );
 </script>
