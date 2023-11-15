@@ -7,7 +7,14 @@
                     <div class="font-medium flex items-center space-x-2 text-base lg:text-lg">
                         <img class="h-4 lg:h-6 rounded" :src="`/countries/${game.home_team.code}.svg`"><span>{{ game.home_team.name }}</span>
                     </div>
-                    <div class="text-lg lg:text-xl font-bold">{{ game.home_team_score }} - {{ game.away_team_score }} </div>
+                    <div class="text-lg lg:text-xl font-bold flex items-center space-x-1">
+                        <span>{{ game.home_team_score }}</span>
+                        <span v-if="game.penalty_shootout" class="text-sm lg:text-base font-normal">({{ game.home_team_score_penalties }})</span>
+                            <span>-</span>
+                        <span>{{ game.away_team_score }}</span>
+                        <span v-if="game.penalty_shootout" class="text-sm lg:text-base font-normal">({{ game.away_team_score_penalties }})</span>
+                        <span class="text-sm lg:text-base font-normal" v-if="game.extra_time && !game.penalty_shootout">(a.e.t)</span>
+                    </div>
                     <div class="font-medium flex items-center space-x-2 text-base lg:text-lg">
                         <span>{{ game.away_team.name }}</span><img class="h-4 lg:h-6 rounded" :src="`/countries/${game.away_team.code}.svg`">
                     </div>

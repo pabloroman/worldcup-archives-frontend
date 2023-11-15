@@ -16,9 +16,10 @@
 
                     <div class="w-20 lg:w-32 text-center flex flex-col items-center justify-center">
                         <div class="text-3xl lg:text-6xl font-bold">{{ game.score }}</div>
-                        <div v-if="game.penalty_shootout">
-                            <span class="lg:text-xl">({{ game.score_penalties }})</span>
+                        <div v-if="game.penalty_shootout" class="lg:text-2xl">
+                            ({{ game.score_penalties }})
                         </div>
+                        <div v-if="game.extra_time && !game.penalty_shootout" class="lg:text-2xl" >(a.e.t)</div>
                     </div>
 
                     <div class="flex justify-self-end">

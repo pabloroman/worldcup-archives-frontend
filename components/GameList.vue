@@ -9,7 +9,7 @@
     </tbody>
     </template>
 
-    <template v-if="props.games.find(game => game.stage_name == 'final round')">
+    <template v-if="props.includeGroupStages && props.games.find(game => game.stage_name == 'final round')">
     <tr><th class="pb-2 pt-6 uppercase font-normal text-sm text-slate-400" colspan="3">Final round</th></tr>
     <tbody v-for="game in props.games.filter(game => game.stage_name == 'final round')">
         <GamePreview :game="game" :tournament="route.params.tournament"></GamePreview>
@@ -44,15 +44,14 @@
     </tbody>
     </template>
 
-    
-    <template v-if="props.games.find(game => game.stage_name == 'second group stage')">
+    <template v-if="props.includeGroupStages && props.games.find(game => game.stage_name == 'second group stage')">
     <tr><th class="pb-2 pt-6 uppercase font-normal text-sm text-slate-400" colspan="3">Second group stage</th></tr>
     <tbody v-for="game in props.games.filter(game => game.stage_name == 'second group stage')">
         <GamePreview :game="game" :tournament="route.params.tournament"></GamePreview>
     </tbody>
     </template>
 
-    <template v-if="props.games.find(game => game.stage_name == 'group stage')">
+    <template v-if="props.includeGroupStages && props.games.find(game => game.stage_name == 'group stage')">
     <tr><th class="pb-2 pt-6 uppercase font-normal text-sm text-slate-400" colspan="3">Group stage</th></tr>
     <tbody v-for="game in props.games.filter(game => game.stage_name == 'group stage')">
         <GamePreview :game="game" :tournament="route.params.tournament"></GamePreview>
@@ -69,7 +68,11 @@
     const props = defineProps({
         games: {
             type: Array,
-            required: true
+            required: true,
+        },
+        includeGroupStages: {
+            type: Boolean,
+            default: true,
         }
     });
  
