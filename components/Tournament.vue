@@ -96,7 +96,7 @@
                         <table class="min-w-full table-fixed text-right divide-y divide-gray-300">
                             <thead>
                                 <tr>
-                                    <th class="text-left">{{ group.name }}</th>
+                                    <th class="text-left uppercase text-slate-400 font-normal text-sm">{{ group.name }}</th>
                                     <th class="w-1/12">MP</th>
                                     <th class="w-1/12">W</th>
                                     <th class="w-1/12">D</th>
@@ -110,7 +110,7 @@
                                 <tr>
                                     <td class="align-middle whitespace-nowrap py-1">
                                         <NuxtLink :to="`/tournaments/${tournament.id}/teams/${standing.team_code}`" class="flex space-x-3 items-center">
-                                        <div class="text-slate-400 w-4">{{ standing.position }}</div>
+                                        <div class="text-slate-400 w-1 lg:w-4">{{ standing.position }}</div>
                                         <template v-if="standing.advanced">
                                             <img class="h-4 lg:h-5 rounded" :src="`/countries/${standing.team_code}.svg`"><span class="font-bold">{{ standing.team_name }}</span>
                                         </template>
@@ -139,7 +139,7 @@
     <section v-if="!pendingTeams" class="px-4 sm:px-6 lg:px-8">
         <div class="max-w-screen-lg mx-auto py-6 lg:py-10">
             <h3 class="text-xl uppercase text-slate-400">Qualified teams</h3>
-            <div class="grid lg:grid-cols-4 gap-4 mt-4">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
                 <div v-for="team in teams">
                     <NuxtLink class="w-full" :to="'/tournaments/'+route.params.tournament+'/teams/'+team.code">
                     <div class="w-full flex space-x-2 items-center">
