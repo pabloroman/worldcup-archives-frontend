@@ -8,10 +8,10 @@
   <div v-if="!pending" class="mt-4 mb-8">
 
     <div class="grid lg:grid-cols-2 gap-4">
-      <div v-for="tournament in tournaments" class="transition hover:scale-110 hover:shadow-xl hover:z-10 h-32 rounded-xl bg-gradient-to-br from-[#0E1E2C] from-20% via-[#000000] via-30% to-[#283B45]">
+      <div v-for="tournament in tournaments" class="transition hover:shadow-md hover:from-[#283B45] hover:to-[#0E1E2C] h-32 rounded-xl bg-gradient-to-br from-[#0E1E2C] from-20% via-[#000000] via-30% to-[#283B45]">
         <NuxtLink :to="'/tournaments/'+tournament.id" class="h-full flex flex-col lg:flex-row items-center justify-center space-y-2 lg:space-x-4">
           <div class="flex space-x-3"><HostFlag :tournament="tournament"></HostFlag></div>
-          <h2 class="text-white font-bold text-2xl lg:text-4xl uppercase shadow-md">{{ tournament.host_country }} {{ tournament.year }}</h2>
+          <h2 class="text-white font-bold text-2xl lg:text-4xl uppercase">{{ tournament.host_country }} {{ tournament.year }}</h2>
         </NuxtLink>
       </div>
     </div>
